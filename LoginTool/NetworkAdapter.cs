@@ -34,7 +34,7 @@ namespace LoginTool
             ManagementObjectCollection moc = mc.GetInstances();
             foreach (ManagementObject mo in moc)
             {
-                if (!(bool)mo["IPEnabled"] || "e1express" != (string)mo["ServiceName"])
+                if (!(bool)mo["IPEnabled"]) // || "e1express" != (string)mo["ServiceName"])--machine dependency
                     continue;
 
                 _macaddress = (string)mo["MACAddress"];
